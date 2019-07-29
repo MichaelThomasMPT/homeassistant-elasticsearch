@@ -306,7 +306,7 @@ class DocumentPublisher:  # pylint: disable=unused-variable
         _LOGGER.debug("Collecting queued documents for publish")
         actions = []
         entity_counts = {}
-        self._last_publish_time = datetime.now()
+        self._last_publish_time = datetime.utcnow()
 
         while not self.publish_queue.empty():
             entry = self.publish_queue.get()
